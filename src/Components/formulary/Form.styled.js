@@ -2,10 +2,20 @@ import styled from "styled-components";
 
 export const MainForm = styled.main`
   width: 100vw;
+  height: 100vh;
+  align-items: center;
+  background-image: url("src/assets/hamburguer.jpeg");
+  background-size: cover;
+  position: relative;
+ 
 `;
 
+export const Container = styled.div`
+ display: flex;
+
+`
 export const Form = styled.form`
-  background-color: #963c08;
+  background-color: var(--marron-claro);
   width: 80vw;
   height: auto;
   margin: auto;
@@ -14,26 +24,29 @@ export const Form = styled.form`
   border-radius: 20px;
   padding: 3rem;
   display: flex;
-  justify-content: center;
   flex-direction: column;
   align-items: center;
+
+ 
+ 
 
   @media (min-width: 1200px) {
     width: 30vw;
   }
 
-  h2 {
+  h4 {
     margin-bottom: 0.3rem;
-    color: #e1cf7d;
+    color: var(--bege);
     text-align: center;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: bold;
   }
 
   select {
     width: 70vw;
     padding: 0.6rem;
-    border-radius: 10px;
-    background-color: #e1cf7d;
-    border: none;
+    background-color: var(--bege);
     font-size: 1.3rem;
     display: grid;
 
@@ -46,8 +59,9 @@ export const Form = styled.form`
 
   label {
     font-size: 1.2rem;
-    color: #e1cf7d;
-
+    color: var(--bege);
+   
+    
     @media (min-width: 1200px) {
       font-size: 1rem;
     }
@@ -61,9 +75,7 @@ export const Form = styled.form`
 export const Select = styled.select`
   width: 70vw;
   padding: 1rem;
-  border-radius: 10px;
-  background-color: #e1cf7d;
-  border: none;
+  background-color: var(--bege);
   font-size: 1.3rem;
   display: grid;
 

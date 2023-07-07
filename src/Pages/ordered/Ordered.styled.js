@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const DivMenu = styled.div`
-  width: 90vw;
   height: auto;
   margin: auto;
   gap: 1rem;
@@ -12,8 +11,6 @@ export const DivMenu = styled.div`
   align-items: center;
   flex-direction: row;
   justify-content: center;
-  background-color: #963c08;
-
 
   h4 {
     text-transform: uppercase;
@@ -22,29 +19,27 @@ export const DivMenu = styled.div`
   }
 `;
 
-
 export const SectionItens = styled.section`
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  margin: 0.4rem; 
+  margin: 0.4rem;
 `;
 
 export const DivButtons = styled.div`
-  background-color: #963c08;
+  background-color: var(--marron-claro);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   width: 90vw;
   margin: auto;
   border-radius: 15px;
-
 `;
 
 export const Button = styled.button`
   width: 20rem;
   margin-bottom: 2rem;
-  background-color: #8c0000;
+  background-color: var(--vermelho);
   gap: 2rem;
   padding: 0.5rem;
   margin: 0.5rem;
@@ -54,7 +49,7 @@ export const Button = styled.button`
   font-size: 0.8rem;
   font-weight: bold;
   text-transform: uppercase;
-  color: #DDD9CE;
+  color: var(--cinza);
   cursor: pointer;
   margin-top: 1rem;
 `;
@@ -69,7 +64,7 @@ export const WarningMsg = styled.p`
   position: fixed;
   right: 0;
   top: 5%;
-  background-color: #DDD9CE;;
+  background-color: var(--cinza);
   color: red;
   font-size: 1rem;
   font-family: cursive;

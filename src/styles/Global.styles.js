@@ -8,7 +8,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: #F0B04E;
+    background-color: var(--bege);
     font-family: Arial, Helvetica, sans-serif
   }
 
@@ -18,16 +18,44 @@ export const GlobalStyle = createGlobalStyle`
   
   li{
     list-style:none;
+    color: inherit
   }
-`;
+
+  button{
+    cursor: pointer;
+    border-radius: 10px;
+    text-transform: uppercase;
+    border: none;   
+  }
+
+  input, select{
+    border-radius: 10px;
+    border: none;
+  }
+
+  :root{
+    --marron-escuro: #502314;
+    --marron-claro: #963c08;
+    --bege: #f0b04e;
+    --nude: : #f49d4d;
+    --vermelho: #8c0000;
+    --verde: #b3b359;
+    --verde-escuro: #03300b;
+    --cinza: #d0d7b5;
+  }
+ `;
+
+
 
 export const ContainerCards = styled.section`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  padding-top: 2rem;
   margin: auto;
   padding-left: 0;
+
 `;
 
 export const Cards = styled.ul`
@@ -35,27 +63,28 @@ export const Cards = styled.ul`
   height: auto;
   border-radius: 15px;
   font-size: 0.9rem;
-  background-color: #e1cf7d;
-  border: 0.3rem solid #963c08;
+  background-color: var(--nude);
+  border: 0.3rem solid var(--marron-escuro);
+  color:var(--marron-escuro);
+  box-shadow: 20px 20px 60px var(--marron-escuro);              
   margin: 1rem;
   padding: 0.8rem;
   align-items: center;
-`;
-
-export const SectionCards = styled.section`
-  display: flex;
-  gap: 0.8rem;
-  justify-content: center;
   align-items: center;
-  margin: 1rem;
-`;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+
+ `;
 
 export const H3 = styled.h3`
   text-transform: uppercase;
   text-align: center;
-  margin-bottom: 1rem;
+  margin: 1rem 1rem;
   justify-content: center;
   display: flex;
+  color: var(--marron-escuro);
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 `
 

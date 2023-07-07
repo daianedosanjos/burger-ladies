@@ -1,12 +1,12 @@
-import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { loginUser } from "../../services/api";
-import { Form, MainForm } from "../../Components/formulary/Form.styled";
+import { Container, Form, MainForm } from "../../Components/formulary/Form.styled";
 import { ButtonForm } from "../../styles/Button.styled";
 import HeaderLogin from "../../Components/header/HeaderLogin";
 import Formulary from "../../Components/formulary/Formulary";
+import Footer from "../../Components/footer/Footer";
 
 export const logout = () => {
   localStorage.removeItem("accessToken");
@@ -28,7 +28,7 @@ function Login() {
       if (response.status <= 299) {
         return response.json();
       } else {
-        toast.error("error!");
+        toast.error("Usuário não encontrado");
       }
     })
     .then((data) => {
@@ -38,11 +38,11 @@ function Login() {
         localStorage.setItem("accessToken", data.accessToken);
         toast.success("Login efetuado!");
         setIsLoggedin(true);
-        if (data.user.role === "atendente") {
+        if (data.user.role === "Atendente") {
           navigate("/attendance");
-        } else if (data.user.role === "cozinha") {
+        } else if (data.user.role === "Cozinha") {
           navigate("/kitchen");
-        } else if (data.user.role === "administração"){
+        } else if (data.user.role === "Administração"){
           navigate("/adm");
         }
       })
@@ -55,10 +55,12 @@ function Login() {
 
   return (
     <>
-      <HeaderLogin />
-      <MainForm>
-        <Form onSubmit={logIn}>
-          <h2>Faça seu login</h2>
+      <HeaderLogin />       
+      <MainForm>   
+        {/* <img src="src\assets\hamburguer.jpeg"  width={"1000px"}alt="" />      */}
+        <Container>
+        <Form onSubmit={logIn}>          
+          <h4>Faça seu login</h4>
           <Formulary
             text="Email"
             type="email"
@@ -80,7 +82,11 @@ function Login() {
             Login
           </ButtonForm>
         </Form>
+        </Container>      
       </MainForm>
+
+      <Footer />
+      
     </>
   );
 }

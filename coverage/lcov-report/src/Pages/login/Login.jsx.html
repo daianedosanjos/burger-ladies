@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">25% </span>
+                <span class="strong">26.66% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8/32</span>
+                <span class='fraction'>8/30</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">27.58% </span>
+                <span class="strong">29.62% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8/29</span>
+                <span class='fraction'>8/27</span>
             </div>
         
             
@@ -152,7 +152,9 @@
 <a name='L87'></a><a href='#L87'>87</a>
 <a name='L88'></a><a href='#L88'>88</a>
 <a name='L89'></a><a href='#L89'>89</a>
-<a name='L90'></a><a href='#L90'>90</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -162,11 +164,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<<<<<<< HEAD
 <span class="cline-any cline-yes">10x</span>
-=======
-<span class="cline-any cline-yes">9x</span>
->>>>>>> 80aed85b67fff6b3dedc44af906e1bb9f256397b
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -202,8 +200,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -214,6 +210,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -250,7 +250,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { loginUser } from "../../services/api";
-import { Form, MainForm } from "../../Components/formulary/Form.styled";
+import { Container, Form, MainForm } from "../../Components/formulary/Form.styled";
 import { ButtonForm } from "../../styles/Button.styled";
 import HeaderLogin from "../../Components/header/HeaderLogin";
 import Formulary from "../../Components/formulary/Formulary";
@@ -285,8 +285,6 @@ function Login() {
 <span class="cstat-no" title="statement not covered" >        localStorage.setItem("accessToken", data.accessToken);</span>
 <span class="cstat-no" title="statement not covered" >        toast.success("Login efetuado!");</span>
 <span class="cstat-no" title="statement not covered" >        setIsLoggedin(true);</span>
-<span class="cstat-no" title="statement not covered" >        setEmail('');</span>
-<span class="cstat-no" title="statement not covered" >        setPassword('');</span>
 <span class="cstat-no" title="statement not covered" >        if (data.user.role === "atendente") {</span>
 <span class="cstat-no" title="statement not covered" >          navigate("/attendance");</span>
         } else <span class="cstat-no" title="statement not covered" >if (data.user.role === "cozinha") {</span>
@@ -304,10 +302,12 @@ function Login() {
 &nbsp;
   return (
     &lt;&gt;
-      &lt;HeaderLogin /&gt;
-      &lt;MainForm&gt;
-        &lt;Form onSubmit={logIn}&gt;
-          &lt;h2&gt;Faça seu login&lt;/h2&gt;
+      &lt;HeaderLogin /&gt;       
+      &lt;MainForm&gt;   
+        {/* &lt;img src="src\assets\hamburguer.jpeg"  width={"1000px"}alt="" /&gt;      */}
+        &lt;Container&gt;
+        &lt;Form onSubmit={logIn}&gt;          
+          &lt;h4&gt;Faça seu login&lt;/h4&gt;
           &lt;Formulary
             text="Email"
             type="email"
@@ -329,7 +329,9 @@ function Login() {
             Login
           &lt;/ButtonForm&gt;
         &lt;/Form&gt;
+        &lt;/Container&gt;      
       &lt;/MainForm&gt;
+      
     &lt;/&gt;
   );
 }
@@ -341,11 +343,7 @@ export default Login;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-<<<<<<< HEAD
-                at 2023-06-26T17:39:33.418Z
-=======
-                at 2023-06-27T18:03:14.852Z
->>>>>>> 80aed85b67fff6b3dedc44af906e1bb9f256397b
+                at 2023-07-06T21:11:52.186Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

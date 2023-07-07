@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">41.66% </span>
+                <span class="strong">40.62% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>15/36</span>
+                <span class='fraction'>13/32</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/11</span>
+                <span class='fraction'>0/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">9.09% </span>
+                <span class="strong">10% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/11</span>
+                <span class='fraction'>1/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">48.14% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>15/30</span>
+                <span class='fraction'>13/27</span>
             </div>
         
             
@@ -184,17 +184,7 @@
 <a name='L119'></a><a href='#L119'>119</a>
 <a name='L120'></a><a href='#L120'>120</a>
 <a name='L121'></a><a href='#L121'>121</a>
-<a name='L122'></a><a href='#L122'>122</a>
-<a name='L123'></a><a href='#L123'>123</a>
-<a name='L124'></a><a href='#L124'>124</a>
-<a name='L125'></a><a href='#L125'>125</a>
-<a name='L126'></a><a href='#L126'>126</a>
-<a name='L127'></a><a href='#L127'>127</a>
-<a name='L128'></a><a href='#L128'>128</a>
-<a name='L129'></a><a href='#L129'>129</a>
-<a name='L130'></a><a href='#L130'>130</a>
-<a name='L131'></a><a href='#L131'>131</a>
-<a name='L132'></a><a href='#L132'>132</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L122'></a><a href='#L122'>122</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -204,7 +194,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -215,7 +204,7 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -238,7 +227,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -246,14 +234,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -331,12 +311,11 @@ import { createProducts } from "../../services/api";
 import { ButtonForm } from "../../styles/Button.styled";
 import Header from "../../Components/header/Header";
 import Formulary from "../../Components/formulary/Formulary";
-import { MainForm, Form } from "../../Components/formulary/Form.styled";
+import { MainForm, Form, Container } from "../../Components/formulary/Form.styled";
 import Select from "../../Components/select/Select";
 &nbsp;
 function AdcProducts() {
   const [name, setName] = useState("");
-  const [img, setImg] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [type, setType] = useState("");
@@ -346,7 +325,7 @@ function AdcProducts() {
   const handleName = <span class="fstat-no" title="function not covered" >(e</span>) =&gt; {
 <span class="cstat-no" title="statement not covered" >    setName(e.target.value);</span>
   };
-  const handleImg = <span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >setImg(e.target.value);</span>
+&nbsp;
   const handleDescription = <span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >setDescription(e.target.value);</span>
   const handlePrice = <span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >setPrice(e.target.value);</span>
   const handleType = <span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >setType(e.target.value);</span>
@@ -355,17 +334,16 @@ function AdcProducts() {
 &nbsp;
   function <span class="fstat-no" title="function not covered" >addProdutos(</span>e) {
 <span class="cstat-no" title="statement not covered" >    e.preventDefault();</span>
-<span class="cstat-no" title="statement not covered" >    if (name === "" || img === "" || description === "" || price === "" || type === "" || category === "" || amount === "" ) {</span>
+<span class="cstat-no" title="statement not covered" >    if (name === "" || description === "" || price === "" || type === "" || category === "" || amount === "" ) {</span>
 <span class="cstat-no" title="statement not covered" >      return toast.error("Por favor, preencha todos os dados");</span>
     }
-<span class="cstat-no" title="statement not covered" >    createProducts(name, img, description, price, type, category, amount)</span>
+<span class="cstat-no" title="statement not covered" >    createProducts(name, description, price, type, category, amount)</span>
       .then(<span class="fstat-no" title="function not covered" >(r</span>esponse) =&gt; {
 <span class="cstat-no" title="statement not covered" >        if (response.ok) {</span>
 <span class="cstat-no" title="statement not covered" >        toast.success("Produto adicionado com sucesso!");</span>
         }
 <span class="cstat-no" title="statement not covered" >        setName("");</span>
 <span class="cstat-no" title="statement not covered" >        setDescription("");</span>
-<span class="cstat-no" title="statement not covered" >        setImg("");</span>
 <span class="cstat-no" title="statement not covered" >        setPrice("");</span>
 <span class="cstat-no" title="statement not covered" >        setType("");</span>
 <span class="cstat-no" title="statement not covered" >        setCategory("");</span>
@@ -380,24 +358,16 @@ function AdcProducts() {
     &lt;&gt;
       &lt;Header /&gt;
       &lt;MainForm&gt;
+        &lt;Container&gt;
         &lt;Form onSubmit={addProdutos}&gt;
-          &lt;h2&gt;Adicionar produto ao cardápio&lt;/h2&gt;
+          &lt;h4&gt;Adicionar ítem ao cardápio&lt;/h4&gt;
           &lt;Formulary
             text="Nome"
             type="text"
             value={name}
             name="name"
-            placeholder="Digite o nome do colaborador"
+            placeholder="Digite o nome ítem"
             onChange={handleName}
-          &gt;&lt;/Formulary&gt;
-&nbsp;
-          &lt;Formulary
-            text="Imagem"
-            type="img"
-            value={img}
-            name="img"
-            placeholder="Adicione uma imagem"
-            onChange={handleImg}
           &gt;&lt;/Formulary&gt;
 &nbsp;
           &lt;Formulary
@@ -406,7 +376,7 @@ function AdcProducts() {
             value={description}
             name="descrição"
             placeholder="Descrição do ítem"
-            onChange={handleDescription}
+            onChange={handleDescription}          
           &gt;&lt;/Formulary&gt;
           &lt;Formulary
             text="Preço"
@@ -424,7 +394,6 @@ function AdcProducts() {
             placeholder="Digite a quantidade"
             onChange={handleAmount}
           &gt;&lt;/Formulary&gt;
-&nbsp;
           &lt;Select
             text="Tipo"
             value={type}
@@ -433,7 +402,7 @@ function AdcProducts() {
             value3=" "
             value4=" "
             name={`${type} || Tipo`}
-            placeholder="Selecione o tipo do produto"
+            placeholder="Selecione o tipo do ítem"
             onChange={handleType}
           &gt;&lt;/Select&gt;
           &lt;Select
@@ -444,12 +413,13 @@ function AdcProducts() {
             value3="Hambúrgueres"
             value4="Acompanhamentos"
             name= {`${category} || Categoria`}
-            placeholder="Selecione a categoria do produto"
+            placeholder="Selecione a categoria do ítem"
             onChange={handleCategory}
           &gt;&lt;/Select&gt;
 &nbsp;
           &lt;ButtonForm type="submit"&gt;Adicionar item ao cardápio&lt;/ButtonForm&gt;
         &lt;/Form&gt;
+        &lt;/Container&gt;
       &lt;/MainForm&gt;
     &lt;/&gt;
   );
@@ -463,11 +433,7 @@ export default AdcProducts;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-<<<<<<< HEAD
-                at 2023-06-26T17:39:33.418Z
-=======
-                at 2023-06-27T18:03:14.852Z
->>>>>>> 80aed85b67fff6b3dedc44af906e1bb9f256397b
+                at 2023-07-06T21:11:52.186Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

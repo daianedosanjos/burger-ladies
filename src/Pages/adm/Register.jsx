@@ -1,17 +1,21 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 import { createUser } from "../../services/api";
-import { Form, MainForm } from "../../Components/formulary/Form.styled";
+import { Container, Form, MainForm } from "../../Components/formulary/Form.styled";
 import { ButtonForm } from "../../styles/Button.styled";
 import Formulary from "../../Components/formulary/Formulary";
 import Select from "../../Components/select/Select";
 import Header from "../../Components/header/Header";
+
+
 
 function Register() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
+  const navigate = useNavigate()
 
   const handleName = (e) => setName(e.target.value);
   const handleEmail = (e) => setEmail(e.target.value);
@@ -36,7 +40,10 @@ function Register() {
     .then((response) => {
       if (response.status === 400) {
         return toast.error("Este e-mail já possui cadastro");
-      } else if (response.ok) {
+      }else if(response.status === 401){
+        toast.error("Por favor, faça login novamente!") 
+        return navigate("/");
+      }else if (response.ok) {
         toast.success("Cadastro realizado com sucesso!");
         setName ("");
         setEmail("");
@@ -53,8 +60,9 @@ function Register() {
     <>
       <Header />
       <MainForm>
+      <Container>
         <Form onSubmit={registerUser}>
-          <h2>Cadastro de colaboradores</h2>
+          <h4>Cadastro de colaboradores</h4>
           <Formulary
             text="Nome do colaborador"
             type="text"
@@ -95,6 +103,7 @@ function Register() {
 
           <ButtonForm type="submit">Efetuar cadastro</ButtonForm>
         </Form>
+        </Container>
       </MainForm>
     </>
   );

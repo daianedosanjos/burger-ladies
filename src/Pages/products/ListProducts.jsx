@@ -8,12 +8,11 @@ import {
   Cards,
   ContainerCards,
   H3,
-  SectionCards,
   Text,
 } from "../../styles/Global.styles";
 import {
-  ButtonDelete,
-  ButtonToEdit,
+  ButtonRed,
+  ButtonGreen,
   ButtonsModal,
   ModalDelete,
 } from "../../styles/Button.styled";
@@ -62,7 +61,10 @@ const ListProducts = () => {
   async function deleteProducts() {
     deleteApi(`products/${idDelete.id}`)
       .then((response) => {
-        if (response.ok) {
+        if(response.status === 401) {
+          toast.error("Por favor, faça login novamente!") 
+          navigate("/");
+         }else if (response.ok) {
           toast.success("ìtem excluído com sucesso");
         }
       })
@@ -86,18 +88,17 @@ const ListProducts = () => {
       {showModalEdit && (
         <EditProduct product={editingProduct} fechar={closeModalEdit} />
       )}
-
+      <ContainerCards>
+        
       {showModalDelete && idDelete && (
         <ModalDelete>
           <Text>Tem certeza que deseja excluir este produto?</Text>
           <ButtonsModal>
-            <ButtonToEdit onClick={deleteProducts}>Sim</ButtonToEdit>
-            <ButtonDelete onClick={closeModalDelete}>Cancelar</ButtonDelete>
+            <ButtonRed onClick={deleteProducts}>Sim</ButtonRed>
+            <ButtonGreen onClick={closeModalDelete}>Cancelar</ButtonGreen>
           </ButtonsModal>
         </ModalDelete>
       )}
-
-      <ContainerCards>
         {products.map((product) => (
           <Cards key={product.id}>
             <li>         
@@ -120,15 +121,15 @@ const ListProducts = () => {
               <strong>Preço: </strong>
               {product.price},00
             </li>
-            <SectionCards>
-              <ButtonDelete onClick={() => openModalDelete(product)}>
+            <ButtonsModal>
+              <ButtonRed onClick={() => openModalDelete(product)}>
                 Excluir
-              </ButtonDelete>
+              </ButtonRed>
 
-              <ButtonToEdit onClick={() => openModalEdit(product)}>
+              <ButtonGreen onClick={() => openModalEdit(product)}>
                 Editar
-              </ButtonToEdit>
-            </SectionCards>
+              </ButtonGreen>
+            </ButtonsModal>
           </Cards>
         ))}
       </ContainerCards>

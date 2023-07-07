@@ -1,61 +1,51 @@
 import styled from "styled-components";
 
 export const CardsItens = styled.div`
-  padding: 1rem;
-  border: 0.1rem solid #8c0000;
-  background-color: #863c08;
+  width: 20rem;
+  height: 13rem;
   border-radius: 15px;
-  color: #ddd9ce;
-  width: 250px;
-  height: 350px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-`;
-
-export const CardInfo = styled.section`
-  text-align: center;
-  margin: auto;
-  display: flex;
+  font-size: 0.9rem;
+  background-color: var(--bege);
+  border: 0.3rem solid var(--marron-escuro);
+  color: var(--marron-escuro);
+  box-shadow: 20px 20px 60px var(--marron-escuro);
   align-items: center;
-  flex-direction: column;
-
-  h3 {
-    text-align: center;
-    font-size: 1.1rem;
-    margin-bottom: 0.7rem;
-  }
-
-  p {
-    width: auto;
-    text-align: center;
-    margin-top: 0.5rem;
-  }
-
-  img {
-    width: 185px;
-    height: auto;
-    border-radius: 10px;
-  }
+  display: grid;
+  padding: 1rem;
 `;
 
-export const Button = styled.button`
-  width: 2rem;
-  height: 2rem;
-  font-size: 1.2rem;
-  border: none;
+export const Headercard = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
   font-weight: bold;
-  background-color: transparent;
-  outline: none;
-  border-radius: 50%;
-  cursor: pointer;
+
+  h5{
+   width: 12vw;
+  }
 `;
 
 export const CardPrice = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
   font-weight: bold;
-  justify-content: space-between;
-  margin-bottom: 1rem;
+  background-color: var(--verde-escuro);
+  width: 4rem;
+  height: 3rem;
+  border-radius: 50%;
+  color: var(--bege);
+
+  p {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+  }
 `;
+
+export const DivButton = styled.div`
+  button {
+    background-color: transparent;
+  }
+`;
+

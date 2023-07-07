@@ -4,8 +4,8 @@ import { getApi, deleteApi } from "../../services/api";
 import Header from "../../Components/header/Header";
 import EditUser from "./EditUser";
 import {
-  ButtonDelete,
-  ButtonToEdit,
+  ButtonRed,
+  ButtonGreen,
   ButtonsModal,
   ModalDelete,
 } from "../../styles/Button.styled";
@@ -13,7 +13,6 @@ import {
   Cards,
   ContainerCards,
   H3,
-  SectionCards,
   Text,
 } from "../../styles/Global.styles";
 
@@ -82,18 +81,17 @@ const ListUsers = () => {
     <>
       <Header />
       <H3>Lista de colaboradores</H3>
-      {showModalEdit && <EditUser user={editingUser} fechar={closeModalEdit} />}
+      {showModalEdit && <EditUser user={editingUser} fechar={closeModalEdit} />}      
+      <ContainerCards>
       {showModalDelete && idDelete && (
         <ModalDelete>
           <Text>Tem certeza que deseja excluir este colaborador?</Text>
           <ButtonsModal>
-            <ButtonToEdit onClick={deleteUsers}>Sim</ButtonToEdit>
-            <ButtonDelete onClick={closeModalDelete}>Cancelar</ButtonDelete>
+            <ButtonRed onClick={deleteUsers}>Sim</ButtonRed>
+            <ButtonGreen onClick={closeModalDelete}>Cancelar</ButtonGreen>
           </ButtonsModal>
         </ModalDelete>
       )}
-      
-      <ContainerCards>
         {users.map((user) => (
           <>
             <Cards key={user.id}>
@@ -109,14 +107,14 @@ const ListUsers = () => {
                 <strong>Setor: </strong>
                 {user.role} <br />
               </li>
-              <SectionCards>
-                <ButtonDelete onClick={() => openModalDelete(user)}>
+              <ButtonsModal>
+                <ButtonRed onClick={() => openModalDelete(user)}>
                   Excluir
-                </ButtonDelete>
-                <ButtonToEdit onClick={() => openModalEdit(user)}>
+                </ButtonRed>
+                <ButtonGreen onClick={() => openModalEdit(user)}>
                   Editar
-                </ButtonToEdit>
-              </SectionCards>
+                </ButtonGreen>
+              </ButtonsModal>
             </Cards>
           </>
         ))}

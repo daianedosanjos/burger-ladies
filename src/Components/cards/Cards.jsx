@@ -1,22 +1,22 @@
-import { BsCartPlus } from "react-icons/bs";
-import { Button, CardInfo, CardPrice, CardsItens } from "./Cards.styled";
-import burguerLadies from "../../assets/ladies.png";
+import { FaCartArrowDown } from "react-icons/fa";
+import { CardPrice, CardsItens, Headercard, DivButton } from "./Cards.styled";
 
 const Cards = ({ item, handleClick }) => {
   const { name, price, description } = item;
   return (
-    <CardsItens>
-      <CardInfo>
-        <h3>{name}</h3>
-        <img src={burguerLadies} alt="Image" />
-        <p>{description}</p>
-      </CardInfo>
+    <CardsItens>      
+     <Headercard>
+      <h5>{name}</h5>     
       <CardPrice>
-        <p>R$ {price},00</p>
-        <Button onClick={() => handleClick(item)}>
-          <BsCartPlus size={27} weight="bold" color="#DDD9CE" />
-        </Button>
+      <p>R$ {price},00</p>
       </CardPrice>
+      </Headercard>
+       <p>{description}</p>       
+        <DivButton>
+        <button onClick={() => handleClick(item)}>
+          <FaCartArrowDown size={30} weight="bold" color="#03300b" />
+         </button>
+        </DivButton>      
     </CardsItens>
   );
 };

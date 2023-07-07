@@ -3,9 +3,7 @@ import styled from "styled-components";
 export const CustomInput = styled.input`
   width: 70vw;
   padding: 0.6rem;
-  border-radius: 10px;
-  background-color: #e1cf7d;
-  border: none;
+  background-color: var(--bege);
   font-size: 1.3rem;
 
   @media (min-width: 1200px) {
@@ -16,7 +14,7 @@ export const CustomInput = styled.input`
 
   input::placeholder {
     font-size: 1.6rem;
-    color: #963c08;
+    color: var(--bege);
 
     @media (min-width: 1200px) {
       font-size: 0.8rem;

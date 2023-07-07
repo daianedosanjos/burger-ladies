@@ -1,17 +1,23 @@
 import styled from "styled-components";
 
 export const ContainerHeader = styled.header`
-  width: 80vw;
+  width: 100vw;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   margin: auto;
   gap: 4rem;
-  padding: 2rem;
+  padding-top: 2rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  background-color: var(--marron-claro);
 
-  @media (min-width: 300px) and (max-width: 772px) {
+  @media (min-width: 250px) and (max-width: 700px) {
     justify-content: center;
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
   }
 
   img {
@@ -24,4 +30,9 @@ export const IconesMenu = styled.section`
   align-items: center;
   justify-content: center;
   gap: 4rem;
+
+  @media (min-width: 250px) and (max-width: 700px) {
+   margin-bottom: 1rem;
+  }
+
 `;

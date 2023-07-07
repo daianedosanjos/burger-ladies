@@ -4,8 +4,6 @@ import { toast } from "react-toastify";
 import {
   CartBox,
   Total,
-  CartImg,
-  DivTest,
   DivButton,
   FinalizeOrder,
   ContainerFooterOrder,
@@ -91,20 +89,18 @@ const Cart = ({ cart, setCart, handleChange }) => {
         </label>
       </FormClient>
       {cart.map((item) => (
-        <CartBox key={item.id}>
-          <CartImg>
-            <p>{item.name}</p>
-            <p>R$:{item.price},00</p>
-          </CartImg>
-          <DivTest>
+        <CartBox key={item.id}>       
+            <h5>{item.name}</h5>
+            <p>R$:{item.price},00</p>        
+         
             <DivButton>
               <button onClick={() => handleChange(item, -1)}> - </button>
               <span>{item.amount}</span>
               <button onClick={() => handleChange(item, +1)}> + </button>
             </DivButton>
             <span> R$:{item.amount * item.price},00</span>
-            <button onClick={() => handleRemove(item.id)}>Remover</button>
-          </DivTest>
+            <button onClick={() => handleRemove(item.id)}>Excluir</button>
+        
         </CartBox>
       ))}
       <ContainerFooterOrder>

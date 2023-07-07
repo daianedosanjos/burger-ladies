@@ -13,7 +13,7 @@ const Select = ({
 }) => {
   return (
     <>
-      <label htmlFor={name}>{text}</label>
+      <label htmlFor={name}>{text}
       <StyledSelect text={text} value={value} name={name} onChange={onChange}>
         <option hidden>{placeholder}</option>
         <option value={value1}>{value1}</option>
@@ -21,6 +21,7 @@ const Select = ({
         <option value={value3}>{value3}</option>
         <option value={value4}>{value4}</option>
       </StyledSelect>
+      </label>
     </>
   );
 };

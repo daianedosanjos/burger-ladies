@@ -4,69 +4,65 @@ export const Main = styled.article`
   width: 90vw;
   margin: auto;
   margin-top: 3rem;
-  background-color: #863c08;
-  color: #ddd9ce;
+  background-color: var(--marron-claro);
+  color: var(--cinza);
   padding: 2rem;
   border-radius: 10px;
+  
 `;
+
 export const CartBox = styled.div`
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  border-bottom: 2px solid skyblue;
-  padding: 0.5rem;
-`;
-
-export const CartImg = styled.div`
-  display: flex;
-  width: 400px;
-  gap: 1.5rem;
+  flex-wrap: wrap;
   align-items: center;
+  border-bottom: 2px solid;
+  gap: 0.2rem;
 
+  h5 {
+    width: 35vw;
+    height: 3rem;
+    padding: 1rem;
+  }
   p {
-    font-weight: bold;
-    margin-left: 10px;
+    width: 10vw;
+    height: 3rem;
+    padding: 1rem;
   }
-
-  img {
-    width: 70px;
-    height: auto;
-    border-radius: 15px;
-  }
-`;
-export const DivTest = styled.div`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 2rem;
 
   button {
     padding: 0.3rem;
-    border-radius: 5px;
-    border: none;
+    border-radius: 15px;
     font-weight: bold;
-    background-color: #8c0000;
-    color: #ddd9ce;
-    cursor: pointer;
+    background-color: var(--vermelho);
+    color: var(--cinza);
   }
+
   span {
-    padding: 0.3rem;
+    color: var(--cinza);
+    
   }
 `;
+
 export const DivButton = styled.div`
-  background-color: #ddd9ce;
+  background-color: var(--cinza);
   text-align: center;
   border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5vw;
+  gap: 0.5rem;
+  font-size: 1.3rem;
+  font-weight: bold;
 
   button {
-    width: 1.5rem;
-    height: 1.5rem;
     border-radius: 50%;
-    cursor: pointer;
+    padding: 0.8rem;
   }
+
   span {
     color: #000;
-    font-weight: bold;
   }
 `;
 export const Total = styled.div`
@@ -74,8 +70,7 @@ export const Total = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-top: 1rem;
-  font-size: 1.1rem;
-  font-weight: bold;
+  font-size: 1.5rem;
   margin-right: 6rem;
   gap: 1rem;
 
@@ -87,16 +82,13 @@ export const Total = styled.div`
 `;
 
 export const FinalizeOrder = styled.button`
-  background-color: #8c0000;
+  background-color: var(--vermelho);
   width: 10rem;
   height: auto;
-  color: #ddd9ce;
-  border-radius: 10px;
+  color: var(--cinza);
   margin-top: 1rem;
   text-align: center;
   padding: 0.5rem;
-  cursor: pointer;
-  border: none;
 `;
 
 export const ContainerFooterOrder = styled.section`
@@ -114,20 +106,16 @@ export const FormClient = styled.form`
 
   input {
     width: 17rem;
-    border-radius: 10px;
     padding: 0.5rem;
-    background-color: #e1cf7d;
+    background-color: var(--bege);
     margin-right: 1rem;
-    border: none;
   }
 
   select {
     width: auto;
-    border-radius: 10px;
     padding: 0.5rem;
-    background-color: #e1cf7d;
+    background-color: var(--bege);
     margin-right: 1rem;
-    border: none;
   }
 
   span {

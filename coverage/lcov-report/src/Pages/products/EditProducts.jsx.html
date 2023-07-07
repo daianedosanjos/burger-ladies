@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">2.94% </span>
+                <span class="strong">3.33% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/34</span>
+                <span class='fraction'>1/30</span>
             </div>
         
             
@@ -39,14 +39,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/13</span>
+                <span class='fraction'>0/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">3.7% </span>
+                <span class="strong">4% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/27</span>
+                <span class='fraction'>1/25</span>
             </div>
         
             
@@ -176,9 +176,7 @@
 <a name='L111'></a><a href='#L111'>111</a>
 <a name='L112'></a><a href='#L112'>112</a>
 <a name='L113'></a><a href='#L113'>113</a>
-<a name='L114'></a><a href='#L114'>114</a>
-<a name='L115'></a><a href='#L115'>115</a>
-<a name='L116'></a><a href='#L116'>116</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L114'></a><a href='#L114'>114</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -205,8 +203,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -321,13 +317,11 @@ const EditProduct = <span class="fstat-no" title="function not covered" >({</spa
   const inputRef = <span class="cstat-no" title="statement not covered" >useRef(null);</span>
 &nbsp;
   const handleName = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >setName(e.target.value);</span></span>
-  const handleImg = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >setImg(e.target.value);</span></span>
   const handleDescription = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >setDescription(e.target.value);</span></span>
   const handlePrice = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >setPrice(e.target.value);</span></span>
   const handleType = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >setType(e.target.value);</span></span>
   const handleCategory = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >setCategory(e.target.value);</span></span>
-  const handleAmount = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >setAmount(e.target.value);</span></span>
-&nbsp;
+ 
 <span class="cstat-no" title="statement not covered" >  useEffect(<span class="fstat-no" title="function not covered" >()</span>=&gt;{</span>
 <span class="cstat-no" title="statement not covered" >    inputRef.current.focus();</span>
   }, [])
@@ -354,56 +348,56 @@ const EditProduct = <span class="fstat-no" title="function not covered" >({</spa
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  return (</span>
     &lt;MainEdit&gt;
-    &lt;ContainerEdit&gt;  
-      &lt;Input
-        text="Nome"
-        type="text"
-        value={name}
-        name="name"
-        onChange={handleName}
-        ref={inputRef}
-      /&gt;
+      &lt;ContainerEdit&gt;  
+        &lt;Input
+          text="Nome"
+          type="text"
+          value={name}
+          name="name"
+          onChange={handleName}
+          ref={inputRef}
+        /&gt;
 &nbsp;
-      &lt;InputDescription
-        text="Descrição"
-        type="text"
-        value={description}
-        name="descrição"
-        onChange={handleDescription}
-      /&gt;
+        &lt;InputDescription
+          text="Descrição"
+          type="text"
+          value={description}
+          name="descrição"
+          onChange={handleDescription}
+        /&gt;
 &nbsp;
-      &lt;InputNumber
-        text="Preço"
-        type="text"
-        value={price}
-        name="price"
-        onChange={handlePrice}
-      /&gt;
-  
-      &lt;Select
-        name={type}
-        value={type}
-        value1="Café da manhã"
-        value2="Menu Principal"
-        onChange={handleType}
-      /&gt;
-  
-      &lt;Select
-        value={category}
-        value1="Lanches"
-        value2="Bebidas"
-        value3="Hambúrgueres"
-        value4="Acompanhamentos"
-        name={category}
-        onChange={handleCategory}
-      /&gt;
-  &lt;/ContainerEdit&gt;
-      &lt;SectionButton&gt;
+        &lt;InputNumber
+          text="Preço"
+          type="text"
+          value={price}
+          name="price"
+          onChange={handlePrice}
+        /&gt;
+    
+        &lt;Select
+          name={type}
+          value={type}
+          value1="Café da manhã"
+          value2="Menu Principal"
+          onChange={handleType}
+        /&gt;
+    
+        &lt;Select
+          value={category}
+          value1="Lanches"
+          value2="Bebidas"
+          value3="Hambúrgueres"
+          value4="Acompanhamentos"
+          name={category}
+          onChange={handleCategory}
+        /&gt;
+    &lt;/ContainerEdit&gt;
+    &lt;SectionButton&gt;
       &lt;ButtonUpdate onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >handleUpdate({ id: product["id"] })}</span>&gt;
         Salvar
       &lt;/ButtonUpdate&gt;
-      &lt;/SectionButton&gt;
-      &lt;/MainEdit&gt;
+    &lt;/SectionButton&gt;
+    &lt;/MainEdit&gt;
   );
 };
 &nbsp;
@@ -415,11 +409,7 @@ export default EditProduct;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-<<<<<<< HEAD
-                at 2023-06-26T17:39:33.418Z
-=======
-                at 2023-06-27T18:03:14.852Z
->>>>>>> 80aed85b67fff6b3dedc44af906e1bb9f256397b
+                at 2023-07-06T21:11:52.186Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

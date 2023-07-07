@@ -2,14 +2,15 @@ import styled from "styled-components";
 
 export const ButtonContainer = styled.main`
   margin: auto;
-  width: 90vw;
+  width: 100vw;
+  height: auto;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
   text-align: center;
-  gap: 2rem;
   align-items:center; 
-`;
+  justify-content: center;
+  
+ `;
 
 export const ProgressButton = styled.button`
   margin: auto;
@@ -18,108 +19,113 @@ export const ProgressButton = styled.button`
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  border-radius: 10px;
   margin-top: 2rem;
-  background-color: #963c08;
-  text-transform: uppercase;
-  border: none;
+  background-color: var(--marron-claro);
   font-weight: bold;
-  cursor: pointer;
   font-size: .7rem;
   color: white;
 `;
 
 export const ButtonStatus = styled.button`
   padding: 5px;
-  color: #e1cf7d;
-  background-color: #03300b;
-  border: #03300b;
+  color: var(--cinza);
+  background-color: var(--verde-escuro);
+  border: var(--verde-escuro);
   margin: auto;
   display: flex;
-  border-radius: 5px;
 `
 export const ButtonForm = styled.button`
-  width: 50%;
+  width: 100%;
   margin: auto;
-  border: none;
-  font-size: 1rem;
-  background-color: #03300b;
-  color: #e1cf7d;
-  text-transform: uppercase;
+  font-size: .8rem;
+  background-color: var(--verde-escuro);
+  color: var(--bege);
   font-weight: bold;
-  padding: 0.5rem;
-  border-radius: 10px;
-  cursor: pointer;
+  margin-top: .5rem;
+  padding: .8rem;
 
   :hover {
     background-color: #3a6332;
   }
 `;
 
-export const ButtonDelete = styled.button `
-background-color: #8c0000;
-width: 5rem;
+export const ButtonRed = styled.button `
+background-color: var(--vermelho);
+width: 6rem;
 height: 2rem;
-color: #e1cf7d;
-border-radius: 5px;
-border: none;
+color: var(--cinza);
 `;
 
-export const ButtonToEdit = styled.button `
-background-color: #03300b;
-width: 5rem;
+export const ButtonGreen = styled.button `
+background-color: var(--verde-escuro);
+width: 6rem;
 height: 2rem;
-color: #e1cf7d;
-border-radius: 5px;
-border: none;
+color: var(--cinza);
 `;
 
 export const ButtonUpdate = styled.button `
-background-color: #03300b;
+background-color: var(--verde-escuro);
 width: 5rem;
 height: 2rem;
-color: #e1cf7d;
+color: var(--cinza);
 margin: .2rem;
-border-radius: 5px;
-border: none;
 `
 
 export const ButtonVoltar = styled.button `
 width: 5rem;
 height: 2rem;
-background-color: #03300b;
+background-color: var(--verde-escuro);
 color: white;
-border-radius: 5px;
-border: none;
+`;
+
+export const ButtonMenu = styled.button `
+width: 8rem;
+height: 4rem;
+background-color: var(--verde-escuro);
+color: white;
+
 `;
 
 export const Buttonsair = styled.button `
-background-color: #03300b;
+background-color: var(--verde-escuro);
 width: 5rem;
 height: 2rem;
 color: white;
-border-radius: 5px;
-border: none;
 `;
 
 export const ModalDelete = styled.section`
 width: 20rem;
-height: 20vh;
-position: sticky;
-top: 50vh;
+height: auto;
 display: flex;
-justify-content: center;
+padding: 1rem;
+position: fixed;
 flex-direction: column;
+top: 50vh;
 align-items: center;
 margin: auto;
+background-color: var(--cinza);
+border: 0.3rem solid var(--marron-claro);
 border-radius: 15px;
-background-color: white;
-border: 0.3rem solid #963c08;
 `;
 
 export const ButtonsModal = styled.div`
 display: flex;
+align-items: center;
+justify-content: center;
 gap: .5rem;
 margin-top: 2rem;
 `;
+
+export const ButtonsKitchen = styled.div`
+display: flex;
+flex-direction: column;
+gap: .5rem;
+margin-top: 2rem;
+`;
+
+export const ButtonDelete = styled.button `
+background-color: var(--vermelho);
+color: var(--cinza);
+padding: .6rem;
+`
 

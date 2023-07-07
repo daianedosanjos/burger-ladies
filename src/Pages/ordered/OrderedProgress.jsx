@@ -43,7 +43,7 @@ const OrderedProgress = () => {
     <MyCart size={cart.length} setShow={setShow} />
 
     {show ? (
-      <Ordered handleClick={handleClick} />
+      <Ordered handleClick={handleClick}  />
     ) : (
       <Cart cart={cart} setCart={setCart} handleChange={handleChange} />
     )}

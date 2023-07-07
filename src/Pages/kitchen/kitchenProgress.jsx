@@ -6,16 +6,24 @@ import {
   ButtonContainer,
   ButtonStatus,
   ProgressButton,
+  ButtonDelete,
+  ButtonsKitchen,
+  ModalDelete,
+  ButtonsModal,
+  ButtonRed,
+  ButtonGreen
 } from "../../styles/Button.styled";
 import { deleteApi, getApi, patchOrders } from "../../services/api";
-import { ContainerCards } from "../../styles/Global.styles";
-import { CardOrder, Itens } from "./KitchenProgress.styled";
+import { Cards, ContainerCards, Text } from "../../styles/Global.styles";
+import { Itens } from "./KitchenProgress.styled";
 
 const KitchenProgress = () => {
   const [orders, setOrders] = useState([]);
   const [selectedStatus, setSelectedStatus] = useState("");
   const [showStatus, setShowStatus] = useState(false);
   const [status, setStatus] = useState([]);
+  const [showModalDelete, setShowModalDelete] = useState(false);
+  const [idDelete, setIdDelete] = useState(null);
 
   const getOrders = async () => {
     getApi(`orders/`)
@@ -70,7 +78,7 @@ const KitchenProgress = () => {
   };
 
   async function deleteOrders(order) {
-    deleteApi(`orders/${order.id}`)
+    deleteApi(`orders/${idDelete.id}`)
       .then((response) => {
         if (response.ok) {
           toast.success("Pedido excluído com sucesso!");
@@ -78,8 +86,9 @@ const KitchenProgress = () => {
       })
       .then((data) => {
         setOrders((prevState) =>
-          prevState.filter((item) => item.id !== order.id)
+          prevState.filter((item) => item.id !== idDelete.id)
         );
+        closeModalDelete();
         console.log(data);
       })
       .catch((error) => {
@@ -87,6 +96,17 @@ const KitchenProgress = () => {
       });
     console.log(orders);
   }
+
+  const openModalDelete = (order) => {
+    setIdDelete(order);
+    setShowModalDelete(true);
+  };
+
+  const closeModalDelete = () => {
+    setIdDelete(null);
+    setShowModalDelete(false);
+  };
+
 
   return (
     <>
@@ -104,22 +124,33 @@ const KitchenProgress = () => {
           Pedidos entregues
         </ProgressButton>
       </ButtonContainer>
+      
       <ContainerCards>
+        
+      {showModalDelete && idDelete && (
+        <ModalDelete>
+          <Text>Tem certeza que deseja excluir este Pedido?</Text>
+          <ButtonsModal>
+            <ButtonRed onClick={deleteOrders}>Sim</ButtonRed>
+            <ButtonGreen onClick={closeModalDelete}>Cancelar</ButtonGreen>
+          </ButtonsModal>
+        </ModalDelete>
+      )}
         {showStatus &&
           statusFiltered.map((item) => (
-            <CardOrder key={item.id}>                  
+            <Cards key={item.id}>                  
               <li key={item.id}> <strong>Data: </strong> {item.realizado} </li> 
               <li key={item.id}> <strong>Cliente: </strong> {item.name} </li> 
               <li key={item.id}> <strong>Mesa: </strong> {item.table} </li>
               <li key={item.id}> <strong>Status: </strong> {item.status} </li>
               <li key={item.id}> <strong>Preço: </strong> {item.total},00 </li>
-
+                <br />
               <li key={item.id}><strong> Detalhes do pedido:</strong>{item.pedidos.map((order) => (
               <>
                 <li key={order.id}> </li>    
                 <Itens>                      
-                  <><li key={order.id}><Check size={15} color="#03300b" weight="bold" />{order.name}</li></>
-                  <><li key={order.id}> Qtd:{order.amount}</li></>
+                  <li key={order.id}><Check size={15} color="#03300b" weight="bold" />{order.name}</li>
+                  <li key={order.id}> Qtd:{order.amount}</li>
                 </Itens> 
               </>      
                   ))}  
@@ -140,16 +171,16 @@ const KitchenProgress = () => {
                   </strong>
                 </p>
               ) : null}
-              <>
+              <ButtonsKitchen>
                 <ButtonStatus onClick={() => changeStatus(item)}>
                   Alterar status do pedido
                 </ButtonStatus>
 
-                <ButtonStatus onClick={() => deleteOrders(item)}>
-                  Deletar pedido
-                </ButtonStatus>
-              </>
-            </CardOrder>
+                <ButtonDelete onClick={() => openModalDelete(item)}>
+                  Excluir pedido
+                </ButtonDelete>
+              </ButtonsKitchen>
+            </Cards>
           ))}
       </ContainerCards>
     </>

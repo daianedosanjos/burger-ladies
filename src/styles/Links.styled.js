@@ -10,7 +10,7 @@ export const AttendanceLink = styled(Link)`
   padding: 2rem;
   border-radius: 10px;
   margin-top: 2rem;
-  background-color: #963c08;
+  background-color: var(--marron-claro);
   text-transform: uppercase;
   border: none;
   font-weight: bold;
@@ -20,20 +20,19 @@ export const AttendanceLink = styled(Link)`
 
 
   :hover {
-    background-color: #763c09;
+    background-color: var(--marron-escuro);
   }
 `;
 
 export const AdmLink = styled(Link)`
-	margin: auto;
+	margin: 1rem;
   display: flex;
-  width: 10rem;
   align-items: center;
   justify-content: center;
   padding: 2rem;
   border-radius: 10px;
   margin-top: 2rem;
-  background-color: #963c08;
+  background-color: var(--marron-claro);
   color: white;
   text-transform: uppercase;
   border: none;

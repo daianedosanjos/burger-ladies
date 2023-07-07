@@ -12,7 +12,7 @@ export const Error = styled.section`
 
   div {
     width: 400px;
-    background-color: #963c08;
+    background-color: var(--marron-claro);
     border-radius: 30px;
     text-align: center;
     padding: 1rem;

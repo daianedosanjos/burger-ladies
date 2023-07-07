@@ -4,12 +4,11 @@ import { createProducts } from "../../services/api";
 import { ButtonForm } from "../../styles/Button.styled";
 import Header from "../../Components/header/Header";
 import Formulary from "../../Components/formulary/Formulary";
-import { MainForm, Form } from "../../Components/formulary/Form.styled";
+import { MainForm, Form, Container } from "../../Components/formulary/Form.styled";
 import Select from "../../Components/select/Select";
 
 function AdcProducts() {
   const [name, setName] = useState("");
-  const [img, setImg] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [type, setType] = useState("");
@@ -19,7 +18,7 @@ function AdcProducts() {
   const handleName = (e) => {
     setName(e.target.value);
   };
-  const handleImg = (e) => setImg(e.target.value);
+
   const handleDescription = (e) => setDescription(e.target.value);
   const handlePrice = (e) => setPrice(e.target.value);
   const handleType = (e) => setType(e.target.value);
@@ -28,17 +27,19 @@ function AdcProducts() {
 
   function addProdutos(e) {
     e.preventDefault();
-    if (name === "" || img === "" || description === "" || price === "" || type === "" || category === "" || amount === "" ) {
+    if (name === "" || description === "" || price === "" || type === "" || category === "" || amount === "" ) {
       return toast.error("Por favor, preencha todos os dados");
     }
-    createProducts(name, img, description, price, type, category, amount)
+    createProducts(name, description, price, type, category, amount)
       .then((response) => {
-        if (response.ok) {
-        toast.success("Produto adicionado com sucesso!");
-        }
+        if(response.status === 401) {
+        toast.error("Por favor, faça login novamente!") 
+        navigate("/");
+        }else if (response.ok) {
+          toast.success("Produto adicionado com sucesso!");
+         }
         setName("");
         setDescription("");
-        setImg("");
         setPrice("");
         setType("");
         setCategory("");
@@ -53,33 +54,24 @@ function AdcProducts() {
     <>
       <Header />
       <MainForm>
+        <Container>
         <Form onSubmit={addProdutos}>
-          <h2>Adicionar produto ao cardápio</h2>
+          <h4>Adicionar ítem ao cardápio</h4>
           <Formulary
             text="Nome"
             type="text"
             value={name}
             name="name"
-            placeholder="Digite o nome do colaborador"
+            placeholder="Digite o nome ítem"
             onChange={handleName}
           ></Formulary>
-
-          <Formulary
-            text="Imagem"
-            type="img"
-            value={img}
-            name="img"
-            placeholder="Adicione uma imagem"
-            onChange={handleImg}
-          ></Formulary>
-
           <Formulary
             text="Descrição"
             type="text"
             value={description}
             name="descrição"
             placeholder="Descrição do ítem"
-            onChange={handleDescription}
+            onChange={handleDescription}          
           ></Formulary>
           <Formulary
             text="Preço"
@@ -97,7 +89,6 @@ function AdcProducts() {
             placeholder="Digite a quantidade"
             onChange={handleAmount}
           ></Formulary>
-
           <Select
             text="Tipo"
             value={type}
@@ -106,7 +97,7 @@ function AdcProducts() {
             value3=" "
             value4=" "
             name={`${type} || Tipo`}
-            placeholder="Selecione o tipo do produto"
+            placeholder="Selecione o tipo do ítem"
             onChange={handleType}
           ></Select>
           <Select
@@ -117,12 +108,13 @@ function AdcProducts() {
             value3="Hambúrgueres"
             value4="Acompanhamentos"
             name= {`${category} || Categoria`}
-            placeholder="Selecione a categoria do produto"
+            placeholder="Selecione a categoria do ítem"
             onChange={handleCategory}
           ></Select>
 
           <ButtonForm type="submit">Adicionar item ao cardápio</ButtonForm>
         </Form>
+        </Container>
       </MainForm>
     </>
   );

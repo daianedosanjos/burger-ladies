@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">34.21% </span>
+                <span class="strong">35.13% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>13/38</span>
+                <span class='fraction'>13/37</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">35.13% </span>
+                <span class="strong">36.11% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>13/37</span>
+                <span class='fraction'>13/36</span>
             </div>
         
             
@@ -189,12 +189,7 @@
 <a name='L124'></a><a href='#L124'>124</a>
 <a name='L125'></a><a href='#L125'>125</a>
 <a name='L126'></a><a href='#L126'>126</a>
-<a name='L127'></a><a href='#L127'>127</a>
-<a name='L128'></a><a href='#L128'>128</a>
-<a name='L129'></a><a href='#L129'>129</a>
-<a name='L130'></a><a href='#L130'>130</a>
-<a name='L131'></a><a href='#L131'>131</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L127'></a><a href='#L127'>127</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -271,12 +266,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -329,8 +321,8 @@ import { getApi, deleteApi } from "../../services/api";
 import Header from "../../Components/header/Header";
 import EditUser from "./EditUser";
 import {
-  ButtonDelete,
-  ButtonToEdit,
+  ButtonRed,
+  ButtonGreen,
   ButtonsModal,
   ModalDelete,
 } from "../../styles/Button.styled";
@@ -338,7 +330,6 @@ import {
   Cards,
   ContainerCards,
   H3,
-  SectionCards,
   Text,
 } from "../../styles/Global.styles";
 &nbsp;
@@ -351,12 +342,12 @@ const ListUsers = () =&gt; {
 &nbsp;
   const getUsers = <span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {
 <span class="cstat-no" title="statement not covered" >    getApi(`users/`)</span>
-      .then(<span class="fstat-no" title="function not covered" >(d</span>ata) =&gt; {
-<span class="cstat-no" title="statement not covered" >        setUsers(data);</span>
-      })
-      .catch(<span class="fstat-no" title="function not covered" >(e</span>rror) =&gt; {
-<span class="cstat-no" title="statement not covered" >        console.error(error);</span>
-      });
+    .then(<span class="fstat-no" title="function not covered" >(d</span>ata) =&gt; {
+<span class="cstat-no" title="statement not covered" >      setUsers(data);</span>
+    })
+    .catch(<span class="fstat-no" title="function not covered" >(e</span>rror) =&gt; {
+<span class="cstat-no" title="statement not covered" >      console.error(error);</span>
+    });
   };
 &nbsp;
   useEffect(<span class="fstat-no" title="function not covered" >()</span> =&gt; {
@@ -385,42 +376,39 @@ const ListUsers = () =&gt; {
 &nbsp;
   async function <span class="fstat-no" title="function not covered" >deleteUsers(</span>user) {
 <span class="cstat-no" title="statement not covered" >    deleteApi(`users/${idDelete.id}`)</span>
-      .then(<span class="fstat-no" title="function not covered" >(r</span>esponse) =&gt; {
-<span class="cstat-no" title="statement not covered" >        if (response.ok) {</span>
-<span class="cstat-no" title="statement not covered" >          toast.success("colaborador excluído com sucesso");</span>
-        }
-      })
-      .then(<span class="fstat-no" title="function not covered" >(d</span>ata) =&gt; {
-        // const teste = users.filter( item =&gt; item.id !== user.id)
-<span class="cstat-no" title="statement not covered" >        setUsers(<span class="fstat-no" title="function not covered" >(p</span>revState) =&gt;</span>
-<span class="cstat-no" title="statement not covered" >          prevState.filter(<span class="fstat-no" title="function not covered" >(i</span>tem) =&gt; <span class="cstat-no" title="statement not covered" >item.id !== idDelete.id)</span></span>
-        );
-<span class="cstat-no" title="statement not covered" >        closeModalDelete();</span>
-<span class="cstat-no" title="statement not covered" >        console.log(data);</span>
-      })
-      .catch(<span class="fstat-no" title="function not covered" >(e</span>rror) =&gt; {
-<span class="cstat-no" title="statement not covered" >        console.log(error);</span>
-      });
-<span class="cstat-no" title="statement not covered" >    console.log(user.id);</span>
+    .then(<span class="fstat-no" title="function not covered" >(r</span>esponse) =&gt; {
+<span class="cstat-no" title="statement not covered" >      if (response.ok) {</span>
+<span class="cstat-no" title="statement not covered" >        toast.success("colaborador excluído com sucesso");</span>
+      }
+    })
+    .then(<span class="fstat-no" title="function not covered" >(d</span>ata) =&gt; {
+      // const teste = users.filter( item =&gt; item.id !== user.id)
+<span class="cstat-no" title="statement not covered" >      setUsers(<span class="fstat-no" title="function not covered" >(p</span>revState) =&gt;</span>
+<span class="cstat-no" title="statement not covered" >        prevState.filter(<span class="fstat-no" title="function not covered" >(i</span>tem) =&gt; <span class="cstat-no" title="statement not covered" >item.id !== idDelete.id)</span></span>
+      );
+<span class="cstat-no" title="statement not covered" >      closeModalDelete();</span>
+<span class="cstat-no" title="statement not covered" >      console.log(data);</span>
+    })
+    .catch(<span class="fstat-no" title="function not covered" >(e</span>rror) =&gt; {
+<span class="cstat-no" title="statement not covered" >      console.log(error);</span>
+    });
   }
 &nbsp;
   return (
     &lt;&gt;
       &lt;Header /&gt;
       &lt;H3&gt;Lista de colaboradores&lt;/H3&gt;
-&nbsp;
-      {showModalEdit &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >&lt;EditUser user={editingUser} fechar={closeModalEdit} /&gt;}</span>
-&nbsp;
+      {showModalEdit &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >&lt;EditUser user={editingUser} fechar={closeModalEdit} /&gt;}      </span>
+      &lt;ContainerCards&gt;
       {showModalDelete &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >idDelete </span>&amp;&amp; (
 <span class="branch-2 cbranch-no" title="branch not covered" >        &lt;ModalDelete&gt;</span>
           &lt;Text&gt;Tem certeza que deseja excluir este colaborador?&lt;/Text&gt;
           &lt;ButtonsModal&gt;
-            &lt;ButtonToEdit onClick={deleteUsers}&gt;Sim&lt;/ButtonToEdit&gt;
-            &lt;ButtonDelete onClick={closeModalDelete}&gt;Cancela&lt;/ButtonDelete&gt;
+            &lt;ButtonRed onClick={deleteUsers}&gt;Sim&lt;/ButtonRed&gt;
+            &lt;ButtonGreen onClick={closeModalDelete}&gt;Cancelar&lt;/ButtonGreen&gt;
           &lt;/ButtonsModal&gt;
         &lt;/ModalDelete&gt;
       )}
-      &lt;ContainerCards&gt;
         {users.map(<span class="fstat-no" title="function not covered" >(u</span>ser) =&gt; (
 <span class="cstat-no" title="statement not covered" >          &lt;&gt;</span>
             &lt;Cards key={user.id}&gt;
@@ -436,14 +424,14 @@ const ListUsers = () =&gt; {
                 &lt;strong&gt;Setor: &lt;/strong&gt;
                 {user.role} &lt;br /&gt;
               &lt;/li&gt;
-              &lt;SectionCards&gt;
-                &lt;ButtonDelete onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >openModalDelete(user)}</span>&gt;
+              &lt;ButtonsModal&gt;
+                &lt;ButtonRed onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >openModalDelete(user)}</span>&gt;
                   Excluir
-                &lt;/ButtonDelete&gt;
-                &lt;ButtonToEdit onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >openModalEdit(user)}</span>&gt;
-                    Editar
-                &lt;/ButtonToEdit&gt;
-              &lt;/SectionCards&gt;
+                &lt;/ButtonRed&gt;
+                &lt;ButtonGreen onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >openModalEdit(user)}</span>&gt;
+                  Editar
+                &lt;/ButtonGreen&gt;
+              &lt;/ButtonsModal&gt;
             &lt;/Cards&gt;
           &lt;/&gt;
         ))}
@@ -460,11 +448,7 @@ export default ListUsers;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-<<<<<<< HEAD
-                at 2023-06-26T17:39:33.418Z
-=======
-                at 2023-06-27T18:03:14.852Z
->>>>>>> 80aed85b67fff6b3dedc44af906e1bb9f256397b
+                at 2023-07-06T21:11:52.186Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
