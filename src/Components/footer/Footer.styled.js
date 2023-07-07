@@ -17,17 +17,20 @@ export const FooterContainer = styled.footer`
 `;
 
 export const FooterStyled = styled.footer`
-  width: 100%;
+  width: 100vw;
   color: var(--cinza);
-  justify-content: center;
   display: flex;
+  justify-content: center;  
+  flex-wrap: wrap;
   font-size: .8rem;
 `;
 export const FooterSocial = styled.div`
   gap: 2rem;
   font-size: 1.5rem;
-  justify-content: center;
   display: flex;
+  justify-content: center;
+  top: 0;
+ 
 
   .linkedin {
     background: #0072b1;
