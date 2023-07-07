@@ -10,11 +10,6 @@ export const FooterContainer = styled.footer`
   flex-wrap: wrap;
   align-items: center;
   padding: 1rem;
-  position: fixed;
-  bottom: 0;
-  align-items: center;
-  display: inline-block;
-
 `;
 
 export const FooterStyled = styled.footer`
@@ -22,7 +17,7 @@ export const FooterStyled = styled.footer`
   color: var(--cinza);
   justify-content: center;
   display: flex;
-  font-size: 1.1rem;
+  font-size: .8rem;
 `;
 export const FooterSocial = styled.div`
   gap: 2rem;

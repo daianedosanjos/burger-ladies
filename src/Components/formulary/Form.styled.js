@@ -7,13 +7,11 @@ export const MainForm = styled.main`
   align-items: center;
   background-image: url(${burguer});
   background-size: cover;
-  position: relative; 
 `;
 
 export const Container = styled.div`
- display: flex;
-
-`
+  display: flex;
+`;
 export const Form = styled.form`
   background-color: var(--marron-claro);
   width: 80vw;
@@ -26,9 +24,6 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-
- 
- 
 
   @media (min-width: 1200px) {
     width: 30vw;
@@ -60,8 +55,7 @@ export const Form = styled.form`
   label {
     font-size: 1.2rem;
     color: var(--bege);
-   
-    
+
     @media (min-width: 1200px) {
       font-size: 1rem;
     }
