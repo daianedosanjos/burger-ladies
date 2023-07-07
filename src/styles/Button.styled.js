@@ -24,6 +24,10 @@ export const ProgressButton = styled.button`
   font-weight: bold;
   font-size: .7rem;
   color: white;
+
+  :hover {
+    background-color: var(--marron-escuro);
+  }
 `;
 
 export const ButtonStatus = styled.button`

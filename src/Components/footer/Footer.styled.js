@@ -10,6 +10,10 @@ export const FooterContainer = styled.footer`
   flex-wrap: wrap;
   align-items: center;
   padding: 1rem;
+  position: fixed;
+  bottom: 0;
+
+
 `;
 
 export const FooterStyled = styled.footer`
