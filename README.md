@@ -51,9 +51,9 @@ Receber mensagens de erro compreensíveis, dependendo do que há de errado com a
 Entrar no sistema de pedidos se as credenciais estiverem corretas.<br>
 
 <br>
-<div align="center"><img width="500px" src="./src/assets/image-1.png" alt="Tela de Login" title="Tela de Login"></div>
+<div align="center"><img width="600px" src="./src/assets/image-1.png" alt="Tela de Login" title="Tela de Login"></div>
 <br>
-<div align="center"><img width="500px" src="./src/assets/image-2.png" alt="Tela Garçon" title="Tela Garçon"></div>
+<div align="center"><img width="600px" src="./src/assets/image-2.png" alt="Tela Garçon" title="Tela Garçon"></div>
 
 ---
 <br>
@@ -75,11 +75,11 @@ Funcionar bem em um tablet.
 
 <br>
 <div align="center">
- <img width="500px" 
+ <img width="600px" 
 src="./src/assets/image-3.png" alt="Tela Garçon Novo Pedido" title="tela de menu"></div>
 <br>
 <div align="center">
- <img width="500px" 
+ <img width="600px" 
 src="./src/assets/image-5.png" alt="Tela Garçon Novo Pedido" title="carrinho"></div>
 
 ---
@@ -97,7 +97,7 @@ Visualizar os pedidos solicitados à medida que são feitos.<br>
 Marcar os pedidos que foram preparados e estão prontos para serem servidos. <br>
 Ver o tempo que levou para preparar o pedido desde a chegada até o momento em que foi marcado como concluído.
 <br>
-<div align="center"><img width="500px" src="./src/assets/image-8.png" alt="tela de pedidos" ></div>
+<div align="center"><img width="600px" src="./src/assets/image-8.png" alt="tela de pedidos" ></div>
 
 ---
 <br>
@@ -114,7 +114,7 @@ Veja a lista de pedidos prontos para servir.
 
 <br>
 
-<div align="center"><img width="500px" src="./src/assets/image-4.png" alt="Tela cozinha"></div>
+<div align="center"><img width="600px" src="./src/assets/image-4.png" alt="Tela cozinha"></div>
 
 ---
 <br>
@@ -133,11 +133,11 @@ Excluir trabalhadores.<br>
 Atualize os dados do trabalhador.
 
 <br>
-<div align="center"><img width="500px" src="./src/assets/image-9.png" alt="Tela Adm Itens do Menu"></div>
+<div align="center"><img width="600px" src="./src/assets/image-9.png" alt="Tela Adm Itens do Menu"></div>
 <br>
-<div align="center"><img width="500px" src="./src/assets/image-10.png" alt="Tela registrar coloborador"></div>
+<div align="center"><img width="600px" src="./src/assets/image-10.png" alt="Tela registrar coloborador"></div>
 <br>
-<div align="center"><img width="500px" src="./src/assets/image-11.png" alt="Tela lista colaboradores"></div>
+<div align="center"><img width="600px" src="./src/assets/image-11.png" alt="Tela lista colaboradores"></div>
 
 ---
 <br>
@@ -157,8 +157,8 @@ Atualize os dados do produto.
 
 <br>
 
-<div align="center"><img width="500px" src="./src/assets/image-9.png" alt="Tela Adm Itens do Menu" title="Tela Adm Itens do Menu"></div>
+<div align="center"><img width="600px" src="./src/assets/image-9.png" alt="Tela Adm Itens do Menu" title="Tela Adm Itens do Menu"></div>
 <br>
-<div align="center"><img width="500px" src="./src/assets/image-13.png" alt="tela adicionar itens" ></div>
+<div align="center"><img width="600px" src="./src/assets/image-13.png" alt="tela adicionar itens" ></div>
 <br>
-<div align="center"><img width="500px" src="./src/assets/image-12.png" alt="tela lista de ítens"></div>
+<div align="center"><img width="600px" src="./src/assets/image-12.png" alt="tela lista de ítens"></div>
