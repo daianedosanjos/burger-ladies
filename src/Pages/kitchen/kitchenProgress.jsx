@@ -27,12 +27,12 @@ const KitchenProgress = () => {
 
   const getOrders = async () => {
     getApi(`orders/`)
-    .then((data) => {
-      setOrders(data);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+      .then((data) => {
+        setOrders(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   useEffect(() => {
@@ -154,20 +154,29 @@ const KitchenProgress = () => {
                 </Itens> 
               </>      
                   ))}  
-              </li>
-                    
-            <br />
+              </li>                           
+              <br />
               {item.status === "pronto" ? (
                 <p key={item.id}>
                   <strong>
-                    Este pedido ficou pronto em {differenceInMinutes(new Date(item.datapronto),new Date(item.data))} minutos.
+                    Este pedido ficou pronto em{" "}
+                    {differenceInMinutes(
+                      new Date(item.datapronto),
+                      new Date(item.data)
+                    )}{" "}
+                    minutos.
                   </strong>
                 </p>
               ) : null}
               {item.status === "entregue" ? (
                 <p key={item.id}>
                   <strong>
-                    Este pedido ficou pronto em {differenceInMinutes(new Date(item.datapronto), new Date(item.data))} minutos às {new Date(item.datapronto).toLocaleTimeString()}.
+                    Este pedido ficou pronto em{" "}
+                    {differenceInMinutes(
+                      new Date(item.datapronto),
+                      new Date(item.data)
+                    )}{" "}
+                    minutos às {new Date(item.datapronto).toLocaleTimeString()}.
                   </strong>
                 </p>
               ) : null}
