@@ -1,13 +1,13 @@
 import styled from "styled-components";
+import burguer from "../../assets/hamburguer.jpeg";
 
 export const MainForm = styled.main`
   width: 100vw;
   height: 100vh;
   align-items: center;
-  background-image: url("src/assets/hamburguer.jpeg");
+  background-image: url(${burguer});
   background-size: cover;
-  position: relative;
- 
+  position: relative; 
 `;
 
 export const Container = styled.div`

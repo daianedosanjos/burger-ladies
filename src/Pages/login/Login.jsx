@@ -57,7 +57,6 @@ function Login() {
     <>
       <HeaderLogin />       
       <MainForm>   
-        {/* <img src="src\assets\hamburguer.jpeg"  width={"1000px"}alt="" />      */}
         <Container>
         <Form onSubmit={logIn}>          
           <h4>Faça seu login</h4>
