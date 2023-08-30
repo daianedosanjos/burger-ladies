@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const CardsItens = styled.div`
   width: 20rem;
-  height: 13rem;
+  height: 15rem;
   border-radius: 15px;
   font-size: 0.9rem;
   background-color: var(--bege);
@@ -11,19 +11,24 @@ export const CardsItens = styled.div`
   box-shadow: 20px 20px 60px var(--marron-escuro);
   align-items: center;
   display: grid;
+  justify-content: center;
   padding: 1rem;
+
+ 
 `;
 
 export const Headercard = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   text-transform: uppercase;
   font-weight: bold;
-
+  
   h5{
    width: 12vw;
+   padding: 1rem;
   }
+  
 `;
 
 export const CardPrice = styled.div`
@@ -46,6 +51,13 @@ export const CardPrice = styled.div`
 export const DivButton = styled.div`
   button {
     background-color: transparent;
+    margin-left: 1rem;
+    margin-bottom: 0;
   }
+`;
+
+export const Description = styled.p`
+padding: 0.5rem;
+font-size: .9rem;
 `;
 

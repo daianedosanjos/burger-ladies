@@ -1,5 +1,5 @@
 import { FaCartArrowDown } from "react-icons/fa";
-import { CardPrice, CardsItens, Headercard, DivButton } from "./Cards.styled";
+import { CardPrice, CardsItens, Headercard, DivButton, Description } from "./Cards.styled";
 
 const Cards = ({ item, handleClick }) => {
   const { name, price, description } = item;
@@ -11,7 +11,7 @@ const Cards = ({ item, handleClick }) => {
       <p>R$ {price},00</p>
       </CardPrice>
       </Headercard>
-       <p>{description}</p>       
+       <Description>{description}</Description>       
         <DivButton>
         <button onClick={() => handleClick(item)}>
           <FaCartArrowDown size={30} weight="bold" color="#03300b" />

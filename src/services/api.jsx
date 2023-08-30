@@ -1,6 +1,6 @@
 import { toast } from "react-toastify";
-const API = "http://localhost:8080";
-// const API = "https://burger-queen-api-mock-tau.vercel.app"
+// const API = "http://localhost:3000";
+const API = "https://burger-queen-api-mock-tau.vercel.app"
 //-------------POST-------------------------
 
 //REGISTRO DE COLABORADOR

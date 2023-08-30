@@ -145,7 +145,8 @@ const KitchenProgress = () => {
               <li key={item.id}> <strong>Status: </strong> {item.status} </li>
               <li key={item.id}> <strong>Preço: </strong> {item.total},00 </li>
                 <br />
-              <li key={item.id}><strong> Detalhes do pedido:</strong>{item.pedidos.map((order) => (
+              <li key={item.id}><strong> Detalhes do pedido:</strong>
+              {item.pedidos.map((order) => (
               <>
                 <li key={order.id}> </li>    
                 <Itens>                      
@@ -159,11 +160,11 @@ const KitchenProgress = () => {
               {item.status === "pronto" ? (
                 <p key={item.id}>
                   <strong>
-                    Este pedido ficou pronto em{" "}
+                    Este pedido ficou pronto em
                     {differenceInMinutes(
                       new Date(item.datapronto),
                       new Date(item.data)
-                    )}{" "}
+                    )}
                     minutos.
                   </strong>
                 </p>
@@ -175,7 +176,7 @@ const KitchenProgress = () => {
                     {differenceInMinutes(
                       new Date(item.datapronto),
                       new Date(item.data)
-                    )}{" "}
+                    )}
                     minutos às {new Date(item.datapronto).toLocaleTimeString()}.
                   </strong>
                 </p>
